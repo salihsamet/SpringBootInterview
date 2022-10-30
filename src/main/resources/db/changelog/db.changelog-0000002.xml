@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="ssa" id="202205101514_add_constraint">
+        <addUniqueConstraint tableName="person" columnNames="registration_number"/>
+        <addUniqueConstraint tableName="person" columnNames="email"/>
+
+        <addNotNullConstraint tableName="person" columnDataType="VARCHAR(255)" columnName="registration_number"/>
+        <addNotNullConstraint tableName="person" columnDataType="VARCHAR(255)" columnName="email"/>
+        <addColumn tableName="person">
+            <column name="role" type="int"></column>
+        </addColumn>
+        <addNotNullConstraint tableName="person" columnDataType="INT" columnName="role"/>
+
+        <addNotNullConstraint tableName="delivery" columnDataType="TIMESTAMP" columnName="end_time"/>
+        <addNotNullConstraint tableName="delivery" columnDataType="TIMESTAMP" columnName="start_time"/>
+        <addNotNullConstraint tableName="delivery" columnDataType="BIGINT" columnName="distance"/>
+        <addNotNullConstraint tableName="delivery" columnDataType="BIGINT" columnName="price"/>
+        <addNotNullConstraint tableName="delivery" columnDataType="BIGINT" columnName="delivery_man_id"/>
+        <addNotNullConstraint tableName="delivery" columnDataType="BIGINT" columnName="customer_id"/>
+    </changeSet>
+</databaseChangeLog>

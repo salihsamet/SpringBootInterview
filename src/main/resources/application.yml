@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sampledelivery?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: nT5A9Ln!TT.F*8Bv
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+  data:
+    rest:
+      base-path: /api
+  logging:
+    level:
+      root: ERROR
+      org.springframework.web: DEBUG
+      org.hibernate: ERROR
